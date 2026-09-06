@@ -9,7 +9,7 @@
     <title>Flower</title>
   </head>
   <body class="container">
-    <audio src="ChristianBasso&HaienQiu-Flowers.mp3" autoplay></audio>
+    <audio id="musica" src="ChristianBasso&HaienQiu-Flowers.mp3"></audio>
     <div id="lyrics">
      
     </div>
@@ -327,5 +327,13 @@
     </div>
     <script src="anim.js"></script>
     <script src="main.js"></script>
+    <script>
+  window.addEventListener("load", () => {
+    if (sessionStorage.getItem("reproducirMusica") === "si") {
+      const musica = document.getElementById("musica");
+      musica.play();
+    }
+  });
+</script>
   </body>
 </html>
